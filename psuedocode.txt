@@ -1,0 +1,92 @@
+canvas = html id of webcam output
+context = recieves snap shot of webcam output
+
+width = width of webcam output
+height = height of webcam output
+
+cam_output = video feed of webcam
+start_cam = button to start
+stop_cam = button to stop
+pause = is camera paused
+
+start recording when you click start button
+stop recording when you click stop button
+
+what is the color you want to look for
+
+x1 =  1st corrdinate for box on x-axis 
+x2 = 2nd corrdinate for box on x-axis 
+y1 = 1st corrdinate for box on y-axis 
+y2 = 2nd corrdinate for box on y-axis 
+startX = starting x location of box
+startY = starting y location of box
+grow = is the box allowed to grow
+requestID = handles animation frame
+
+method resizeWindow
+  make webcam snapshot 50% of window width
+  make webcam snapshot 70% of window height
+
+method init
+  allow to move box when mouse click
+  do not move box when mouse is not clicked
+  move box
+  do not move box when mouse you're in another window
+  run method resizeWindow
+  keep on resizing window
+
+method select_color
+  select color you want to be detected to start recording
+
+handleSuccess = recieves video stream
+
+method display_image
+  take screenshot of webcam feed and display on screen
+  loop this until clicked stop
+
+method start_camera
+  run dispay_image method
+
+method stop_camera
+  stops display_image method
+
+if a video feed exists get the video feed
+
+method draw
+  draw the box on the screen
+
+method mouse_clicked
+  if you click top right or bottom right of box you can resize
+  do not move if your mouseclick is not within the box
+
+method mouse_up
+  do not move if your mouse is not clicked
+
+method mose_moved(event)
+  resize to how big you drag the mouse
+
+method start_recording
+  records the screen
+
+method stop_recording
+  stops recording the screen
+
+method create_recorder
+  stores video data
+  if not paused take video data and store it
+  once you stop recording call method save_file
+
+method save_file
+  name and download the stored video data
+
+method pause_recording
+  pause the recording
+
+method resume_recording
+  resume the recording
+
+method change_color
+  if you chose red and the color within movable box is majoirty red, record
+if you chose blue and the color within movable box is majoirty blue, record
+if you chose green and the color within movable box is majoirty green, record
+if not pause

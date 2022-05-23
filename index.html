@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handless Recorder</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+ 
+<body>
+
+    <div id="header">Hand\Less Recorder<br></div>
+    <canvas id="canvas"> </canvas>
+    <video id="cam_output" controls autoplay></video>
+
+    <div id = "controls">
+      <!--&#129001;-->
+      <span class="button" id="status"><i class='hidden'>recording status</i>&#128997;</span>
+      <span class="button" id="start_cam" onclick="start_camera();"><i class='hidden'>Record</i>&#9210;</span>
+      <span class="button"  id="stop_cam" onclick="stop_camera();"><i class='hidden'>Stop and Save</i>&#9209;</span>
+      <span id="picker">&#128396;</span>
+      <span class="button"  id="red" onclick="select_color('red');"><i class='hidden'>when the target is red the screen records</i>&#128308;</span>
+      <span class="button"  id="green" onclick="select_color('green');"><i class='hidden'>when the target is green the screen records</i>&#128994;</span>
+      <span class="button"  id="blue" onclick="select_color('blue');"><i class='hidden'>when the target is blue the screen records</i>&#128309;</span>
+    </div>
+
+    <div id="closer" class="floating" onclick='document.getElementById("opener").style.display="block";'>
+        <img src="helpbutton.png">
+    </div>
+    <div id="opener" onclick='document.getElementById("opener").style.display="none";'>
+        <div class="instructions" id="text_instructions">Record your screen only when you are sitting in front of your computer or lecturing. Handless-Recorder will auto-pause the recording when you walk away. You will know when your recording indicated by the green record box. Recordings will be saved locally to your computer. Post your videos to your favorite video site (aka youtube, teachertube, google classroom, etc.) so that students who miss your class can quickly access your teachable moments.</div>
+        <div class="instructions" id="pause_instructions">Press the help button to return to the help section. To exit press anywhere on the screen.</div>
+        <div class="instructions" id="toolbar_instructions">The tool bar contains 6 elements, the recording status, which turns from red to green when the desired color is within the box, the record button, the stop and save button, the red selection button ,the green selection button, and the blue selection button. This toolbar can also be moved around when dragging the toolbar. </div>
+        <div class="instructions" id="box_instructions">Move the box to the desired location you want the color to be tracked at. The box can be expanded when dragged from the bottom right corner. When the desired color is within the box, the color of the box changes to green. When the desired color is not within the box, the color of the box changes to red.</div>
+
+    </div>
+
+
+</body>
+    <script src="main.js"></script>
+</html>
